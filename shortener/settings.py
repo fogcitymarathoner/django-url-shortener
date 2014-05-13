@@ -26,7 +26,7 @@ sys.path.insert(0, BASE_DIR)
 SECRET_KEY = 'wgy)(u7h-$n@th^1)pl4x#k254t_mh!7^#1m-vzdz)g2kr5mc-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -88,9 +88,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = '/home/rocketsr/media/'
+MEDIA_ROOT = '/home/marc/python_apps/tinyurl_sfdjango/media/'
 SITE_NAME = '54.185.154.238:8000'
 SITE_BASE_URL = 'http://' + SITE_NAME + '/'
 STATICFILES_FINDERS = ("django.contrib.staticfiles.finders.FileSystemFinder",
  "django.contrib.staticfiles.finders.AppDirectoriesFinder")
 STATIC_ROOT = os.path.join(BASE_DIR, 'media')
+ALLOWED_HOSTS = ['tu.sfgeek.net', ]

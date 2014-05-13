@@ -23,13 +23,9 @@ urlpatterns = patterns('',
     url(r'^soap/$', 'shortener.views.soap'),
     url(r'^(?P<base62_id>\w+)$', 'shortener.views.follow'),
     url(r'^info/(?P<base62_id>\w+)$', 'shortener.views.info'),
+)
+"""
     url(r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT}),
 
-    url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
-      {'document_root': settings.MEDIA_ROOT}),
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
-      {'document_root': settings.MEDIA_ROOT}),
-)
-"""
 """
