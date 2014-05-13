@@ -91,4 +91,6 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = '/home/rocketsr/media/'
 SITE_NAME = '54.185.154.238:8000'
 SITE_BASE_URL = 'http://' + SITE_NAME + '/'
-
+STATICFILES_FINDERS = ("django.contrib.staticfiles.finders.FileSystemFinder",
+ "django.contrib.staticfiles.finders.AppDirectoriesFinder")
+STATIC_ROOT = os.path.join(BASE_DIR, 'media')
