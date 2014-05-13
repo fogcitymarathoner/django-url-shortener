@@ -54,3 +54,9 @@ docs/_build/
 
 # collected static
 media/
+
+# uwsgi files
+nohup.out
+pid.txt
+reload
+
