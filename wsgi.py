@@ -13,9 +13,8 @@ middleware here, or combine a Django application with an application of another
 framework.
 
 """
-import os, sys
-dlibs = '/home/marc/python_apps/django_libs'
-sys.path.insert(0,dlibs)
+import os
+import sys
 
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "shortener.settings")
